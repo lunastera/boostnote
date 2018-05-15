@@ -1,0 +1,21 @@
+createdAt: "2018-05-13T01:34:02.509Z"
+updatedAt: "2018-05-13T01:36:37.306Z"
+type: "MARKDOWN_NOTE"
+folder: "8196dfea92bae5ea95b1"
+title: "zsh: powerlevel9k"
+content: '''
+  # zsh: powerlevel9k
+  
+  [Show Off Your Config · bhilburn/powerlevel9k Wiki · GitHub](https://github.com/bhilburn/powerlevel9k/wiki/Show-Off-Your-Config)
+  設定色々
+  
+  
+  [powerlevel9k/README.md at master · bhilburn/powerlevel9k · GitHub](https://github.com/bhilburn/powerlevel9k/blob/master/README.md#available-prompt-segments)
+  主に設定できる項目
+'''
+tags: [
+  "zsh"
+  "powerlevel9k"
+]
+isStarred: false
+isTrashed: false

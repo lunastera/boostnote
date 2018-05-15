@@ -1,0 +1,50 @@
+{
+  "folders": [
+    {
+      "key": "21a0872a30d0ee261f99",
+      "color": "#1278BD",
+      "name": "Default"
+    },
+    {
+      "key": "f45813ba065419aa5b3c",
+      "color": "#E10051",
+      "name": "雑記"
+    },
+    {
+      "key": "1573d0fabccb47bc519b",
+      "color": "#E10051",
+      "name": "minimemo"
+    },
+    {
+      "key": "a6e537ab7f03cc49af0c",
+      "color": "#30D5C8",
+      "name": "scala"
+    },
+    {
+      "key": "8196dfea92bae5ea95b1",
+      "color": "#E8D252",
+      "name": "shell"
+    },
+    {
+      "key": "067005f05ee1bfb8ce38",
+      "color": "#E8D252",
+      "name": "java"
+    },
+    {
+      "key": "9e4927fc8caa4e06d5d3",
+      "color": "#30D5C8",
+      "name": "ruby"
+    },
+    {
+      "key": "c4a32f197089978bd010",
+      "color": "#3FD941",
+      "name": "front"
+    },
+    {
+      "key": "13ece63b6941eca7d0a3",
+      "color": "#FF8E00",
+      "name": "git"
+    }
+  ],
+  "version": "1.0"
+}

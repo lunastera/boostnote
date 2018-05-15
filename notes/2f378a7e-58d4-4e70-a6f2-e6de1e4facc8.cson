@@ -1,0 +1,46 @@
+createdAt: "2018-05-14T02:56:53.477Z"
+updatedAt: "2018-05-14T03:43:20.172Z"
+type: "MARKDOWN_NOTE"
+folder: "13ece63b6941eca7d0a3"
+title: "よく使うのに忘れるやつ"
+content: '''
+  # よく使うのに忘れるやつ
+  
+  #### add取り消し
+  
+  **指定**
+  つまり最新のHEADに戻す（--soft)
+  ```
+  git reset HEAD [ファイルパス]
+  ```
+  **まるごと**
+  ```
+  git reset HEAD
+  ```
+  **ファイル削除しつつステージングも取り消し**
+  ```
+  git rm [ファイルパス]
+  ```
+  
+  #### commit取り消し
+  
+  **ワークディレクトリの中身ごと前に戻す**
+  ```
+  git reset --hard HEAD^
+  ```
+  **ワークディレクトリはそのままcommitだけ取り消し**
+  ```
+  git reset --soft 
+  ```
+  
+  #### gitignore反映させたい
+  ```
+  git rm --cached [ファイルパス]
+  ```
+'''
+tags: [
+  "git"
+  "備忘録"
+]
+isStarred: false
+isTrashed: false

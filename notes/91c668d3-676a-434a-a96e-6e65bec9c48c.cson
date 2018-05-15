@@ -1,0 +1,16 @@
+createdAt: "2018-05-13T01:21:34.266Z"
+updatedAt: "2018-05-13T01:21:48.839Z"
+type: "MARKDOWN_NOTE"
+folder: "1573d0fabccb47bc519b"
+title: "s/○○/△△"
+content: '''
+  s/○○/△△
+  
+  sの後の文字が区切り文字だと認識されるのでなんでもいい
+'''
+tags: [
+  "正規表現"
+  "Regexp"
+]
+isStarred: false
+isTrashed: false

@@ -1,0 +1,19 @@
+createdAt: "2018-05-13T01:55:22.539Z"
+updatedAt: "2018-05-13T01:56:17.652Z"
+type: "MARKDOWN_NOTE"
+folder: "1573d0fabccb47bc519b"
+title: "IDEAのsbt auto-import"
+content: '''
+  # IDEAのsbt auto-import
+  
+  するとPCが爆発する
+  手動でやろう
+'''
+tags: [
+  "scala"
+  "sbt"
+  "IntelliJ"
+  "IDEA"
+]
+isStarred: false
+isTrashed: false

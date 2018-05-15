@@ -1,0 +1,93 @@
+createdAt: "2018-05-13T00:47:18.440Z"
+updatedAt: "2018-05-15T10:24:21.531Z"
+type: "MARKDOWN_NOTE"
+folder: "8196dfea92bae5ea95b1"
+title: "zsh: 設定ファイル"
+content: '''
+  # zsh: 設定ファイル
+  
+  ## ログインシェル
+  
+  通常、ターミナル起動させたときとか、sshのときとか、tmuxとか
+  ここでは全て読み込まれる。
+  
+  基本の流れも乗せておく。
+  
+  1. global) `/etc/zshenv`
+  2. local ) `~/.zshenv`
+  3. global) `/etc/zprofile`
+  4. local ) `~/.zprofile`
+  5. global) `/etc/zshrc`
+  6. local ) `~/.zshrc`
+  7. global) `/etc/zlogin`
+  8. local ) `~/.zlogin`
+  
+  ## インタラクティブシェル
+  
+  zshなどコマンドを打って起動させたシェル。
+  `zshenv` と `zshrc`だけが読み込まれる。
+  
+  ## シェルスクリプト
+  
+  `zshenv`だけ読み込まれる。
+  
+  シェルスクリプト
+  
+  によって違う。
+  
+  ### zshenv
+  
+  どんな場合でも必ず一番最初に読み込まれる。
+  環境変数はここに入れたい。
+  
+  ### zprofile
+  
+  ログインシェルの場合のみ読み込まれる。
+  
+  ### zshrc
+  
+  ログインシェルとインタラクティブシェル。
+  だいたいここに書く。
+  
+  ### zlogin
+  
+  ログインシェル。
+  `zprofile`と一緒に使うことを想定されてないらしい。
+  これいる？
+  
+  ### zlogout
+  
+  シェルからexitする直前に呼ばれる。
+  
+  ## 設定書きすぎて重くなったら
+  
+  ### コンパイル
+  
+  ```:zsh
+  $ zcompile ~/.zshrc
+  
+  ```
+  
+  ### ファイル分割
+  
+  ```:~/.zshrc
+  case ${OSTYPE} in
+      darwin*)
+          source ~/.zshrc.darwin
+          ;;
+      linux*)
+          source ~/.zshrc.linux
+          ;;
+  esac
+  ```
+  
+  ## 困ったら
+  [ここ見よう](https://qiita.com/muran001/items/7b104d33f5ea3f75353f.md)
+  
+  
+'''
+tags: [
+  "zsh"
+]
+isStarred: false
+isTrashed: false

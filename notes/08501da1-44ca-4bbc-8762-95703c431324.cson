@@ -1,0 +1,68 @@
+createdAt: "2018-05-13T00:16:41.218Z"
+updatedAt: "2018-05-13T01:35:21.551Z"
+type: "MARKDOWN_NOTE"
+folder: "8196dfea92bae5ea95b1"
+title: "zsh: PATH問題"
+content: '''
+  # zsh: PATH問題
+  
+  zshはOSX El Capitan辺りから謎の挙動をする。
+  その正体は`/etc/zprofile`。
+  
+  ```:/etc/zprofile
+  # system-wide environment settings for zsh(1)
+  if [ -x /usr/libexec/path_helper ]; then
+     eval `/usr/libexec/path_helper -s`
+  fi
+  ```
+  
+  要約すると
+  「`/etc/path`と`/etc/path.d/*`に存在するPATHを、現在設定されているPATHの前に付け加える」
+  という挙動をする。
+  
+  問題なのは
+  
+  1. `/etc/zshenv`
+  2. ` ~/.zshenv`
+  3. `/etc/zprofile` 問題のファイル
+  4. `~/.zprofile`
+  5. `/etc/zshrc`
+  6. `~/.zshrc`
+  7. `/etc/zlogin`
+  6. `~/.zlogin`
+  
+  という読み込み順のため、`.zshenv`にPATHを設定するようにしているともれなくSystemのPATHが優先される。
+  
+  ## 対処法1
+  
+  `~/.zshenv`ではなく、`zprofile`以降にPATHの設定を書く。
+  
+  自分は現在これ
+  `.zshenv`の意味がなくなるきもするけど
+  注意するのがインタラクティブシェルの場合とかで読み込まれるやつ変わるので、[zsh設定ファイル](:note:7d8b1551-3b4d-47b2-bec6-94a683f602a9)参照。
+  
+  ## 対処法2
+  
+  `/etc/zprofile`をコメントアウト
+  
+  `/etc/path`とかは読み込まれなくなるから`.zshenv`の先頭とかに```eval `/usr/libexec/path_helper -s\\` ```って書かないとダメ。
+  
+  ぶっちゃけ筋が悪いというか、システムデフォルト書き換えなきゃダメなのはいかんでしょ。
+  
+  ## 対処法3
+  
+  `~/.zshenv`に`setopt no_global_rcs`を書き加える
+  
+  これは`/etc/`以下にあるシステム設定ファイルをロードしないようにするオプション。よって`/etc/zprofile`も当然読み込まれない。
+  
+  ## 対処法4
+  
+  `~/.zshenv`にPATH設定書いて`zshrc`でもう一回変更かけるパターン
+  `~/.zshenv`にPATH書かないとシェルスクリプト問題とかあるので・・・
+'''
+tags: [
+  "zsh"
+  "PATH"
+]
+isStarred: false
+isTrashed: false

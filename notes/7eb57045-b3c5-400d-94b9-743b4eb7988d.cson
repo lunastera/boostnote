@@ -1,0 +1,21 @@
+createdAt: "2018-05-13T01:53:43.610Z"
+updatedAt: "2018-05-13T02:04:45.551Z"
+type: "MARKDOWN_NOTE"
+folder: "c4a32f197089978bd010"
+title: "最近のフロントスタック"
+content: '''
+  # 最近のフロントスタック
+  
+  - babel/flow/webpack 
+  - jest/power-assert 
+  - react/redux/styled-components/recompose 
+  - storybook 
+  - prettier/eslint
+  
+  [human eslint --fixさんのツイート: "最近のフロントエンドスタック](https://twitter.com/mizchi/status/986946345742123011)
+'''
+tags: [
+  "front"
+]
+isStarred: false
+isTrashed: false

@@ -1,0 +1,42 @@
+createdAt: "2018-05-15T00:45:30.836Z"
+updatedAt: "2018-05-15T01:10:49.037Z"
+type: "SNIPPET_NOTE"
+folder: "8196dfea92bae5ea95b1"
+title: "vim: チートシート"
+description: "vim: チートシート"
+snippets: [
+  {
+    name: "Global"
+    mode: "text"
+    content: '''
+      :help keyword # open help for keyword
+      :save file    # save file
+      :close        # close current pane
+      K             # open man page for word under the cursor
+    '''
+  }
+  {
+    name: "カーソル移動"
+    mode: "Plain Text"
+    content: '''
+      H         # スクリーンの最上段へ移動
+      M         # スクリーンの中断へ移動
+      L         # スクリーンの最下段へ移動
+      w         # 次の単語の先頭にジャンプ 区切り文字まで
+      W         # 次の単語の先頭にジャンプ
+      e         # 単語の最後にジャンプ 区切り文字まで
+      E         # 単語の最後にジャンプ
+      b         # 単語の先頭に戻る 区切り文字まで
+      B         # 単語の先頭に戻る
+      ^         # 行の最初
+      $         # 行の最後
+    '''
+  }
+]
+tags: [
+  "vim"
+  "備忘録"
+]
+isStarred: false
+isTrashed: false
+isPinned: true

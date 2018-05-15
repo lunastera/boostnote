@@ -1,0 +1,89 @@
+createdAt: "2018-05-13T01:23:05.307Z"
+updatedAt: "2018-05-15T11:57:25.223Z"
+type: "MARKDOWN_NOTE"
+folder: "9e4927fc8caa4e06d5d3"
+title: "ActiveRecordチートシート"
+content: '''
+  # ActiveRecordチートシート
+  
+  いちいち調べるの面倒なので
+  一応忘れたときのために`%`はその前かその後に任意数の文字があること
+  
+  ### 読み込み
+  
+  ```:database.yml
+  default: &default
+    adapter: sqlite3
+    database: test.db
+  development:
+    <<: *default
+    database: test.db
+  ```
+  
+  ```:ruby
+  ActiveRecord::Base.configurations = YAML.load_file('database.yml')
+  ActiveRecord::Base.establish_connection('development')
+  ```
+  
+  ### SQL確認
+  ```:ruby
+  User.all.to_sql
+  ```
+  
+  |目的|ActiveRecord|
+  |-:|-:|
+  |select|`User.all`|
+  ||`User.all.select('id, name')`|
+  ||`User.all.select([:id, :name])`|
+  |id検索|`User.find(1)`|
+  |それ以外|`User.find_by(name: 'debug')`|
+  |order|`User.all.order(:name)`|
+  |desc|`User.all.order("name desc")`|
+  |where|`User.all.where(id: 2)`|
+  |<, >|`User.all.where('id > 5')`|
+  |条件指定: in|`User.all.where(id: [2,3,4])`|
+  |条件指定: like|`User.all.where("name like ?", '%word%')`|
+  |count|`User.all.count`|
+  |重複排除: distinct|`User.all.uniq(:name)`|
+  |取得件数|`User.order(:created_at).limit(5)`|
+  
+  
+  ## Insert
+  
+  基本
+  ```
+  user = User.new(
+    name: 'debug'
+  )
+  user.save
+  ```
+  
+  セーブもする方
+  ```
+  User.create(
+    name: 'debug
+  )
+  ```
+  
+  ## TODO
+  
+  - JOIN
+  - UPDATE
+  - DELETE
+  - ヒント句
+  - サニタイズ
+  - bind変数
+  
+  ## あとなんか役立ちそうな情報
+  
+  - [ActiveRecordの複数形処理 - OVERT MEMO](http://d.hatena.ne.jp/cesar/20070416/p2)
+  - [Rails における内部結合、外部結合まとめ - Qiita](https://qiita.com/yuyasat/items/c2ad37b5a24a58ee3d30)
+  - [Sinatra＋ActiveRecord＋SQLite3で，軽量なWeb-DB連携例 – tamo's blog](https://tamosblog.wordpress.com/2012/10/26/sinatra/)
+  
+'''
+tags: [
+  "ruby"
+  "ActiveRecord"
+]
+isStarred: false
+isTrashed: false

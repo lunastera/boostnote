@@ -1,0 +1,27 @@
+createdAt: "2018-05-13T01:49:07.395Z"
+updatedAt: "2018-05-15T00:39:37.673Z"
+type: "MARKDOWN_NOTE"
+folder: "9e4927fc8caa4e06d5d3"
+title: "よく使うのに忘れるやつ"
+content: '''
+  # よく使うのに忘れるやつ
+  
+  実行ファイルのPathとそのディレクトリ
+  ```:ruby
+  __FILE__
+  File.dirname(__FILE__) # 最後に/はつかない
+  ```
+  
+  日付
+  ```:ruby
+  now = Time.now
+  puts now.strftime('%Y/%m/%d %H:%M:%S')  #2014/09/06 16:29:32
+  ```
+'''
+tags: [
+  "ruby"
+  "備忘録"
+]
+isStarred: false
+isTrashed: false
+isPinned: true

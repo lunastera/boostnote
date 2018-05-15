@@ -1,0 +1,30 @@
+createdAt: "2018-05-15T05:57:31.698Z"
+updatedAt: "2018-05-15T08:27:03.641Z"
+type: "MARKDOWN_NOTE"
+folder: "8196dfea92bae5ea95b1"
+title: "xcodeに関するエラー対処"
+content: '''
+  # xcodeに関するエラー対処
+  
+  `brew install macvim`する時におきた
+  
+  ```
+  xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
+  ```
+  
+  ## 解決法
+  
+  [✗ Xcode: xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance · Issue #7905 · meteor/meteor · GitHub](https://github.com/meteor/meteor/issues/7905)
+  
+  まったく新しいMacBook Pro、OS X Sierraでは、このエラーも発生します。必要なドキュメントにxcode-selectパスを修正する方法はありません。開発者にコマンドラインエラーを指示するドキュメントに本当に追加する必要があります。
+  
+  ```:zsh
+  sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+  ```
+'''
+tags: [
+  "xcode"
+  "error"
+]
+isStarred: false
+isTrashed: false
