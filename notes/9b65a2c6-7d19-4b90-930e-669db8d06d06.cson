@@ -1,0 +1,19 @@
+createdAt: "2018-05-15T15:38:23.854Z"
+updatedAt: "2018-05-15T15:39:56.279Z"
+type: "MARKDOWN_NOTE"
+folder: "f45813ba065419aa5b3c"
+title: "オンラインジャッジ / コンパイラ"
+content: '''
+  # オンラインジャッジ / コンパイラ
+  
+  [プログラミング言語 - プログラミング言語を実行する仕組み(9460)｜teratail](https://teratail.com/questions/9460)
+  [Wandboxを支える技術](http://melpon.org/pub/wandbox#18)
+  [paizaのオンラインジャッジを支えるDockerとその周辺](https://www.slideshare.net/paiza_official/paizadocker)
+  [Dockerを使ってOSコマンドインジェクションが出来るSlack botを作った話 - Qiita](https://qiita.com/odanado/items/fb5a5e996b302d4b4ca4)
+  [GitHub - odanado/slackbot-os-command-injection](https://github.com/odanado/slackbot-os-command-injection)
+  [Docker in Docker のベタープラクティス - Qiita](https://qiita.com/sugiyasu-qr/items/85a1bedb6458d4573407)
+  [Docker実戦活用ガイド | 吉岡 恒夫, paiza | 工学 | Kindleストア | Amazon](https://www.amazon.co.jp/Docker%E5%AE%9F%E6%88%A6%E6%B4%BB%E7%94%A8%E3%82%AC%E3%82%A4%E3%83%89-%E5%90%89%E5%B2%A1-%E6%81%92%E5%A4%AB-ebook/dp/B01ID3FE60/ref=tmm_kin_title_sr?_encoding=UTF8&qid=&sr=)
+'''
+tags: []
+isStarred: false
+isTrashed: false

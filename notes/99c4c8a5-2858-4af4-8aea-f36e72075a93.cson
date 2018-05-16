@@ -1,0 +1,17 @@
+createdAt: "2018-05-15T15:34:48.602Z"
+updatedAt: "2018-05-15T15:45:25.407Z"
+type: "MARKDOWN_NOTE"
+folder: "e2766da9c6c1b0f60155"
+title: "AWS"
+content: '''
+  # AWS
+  
+  - [ゼロから作りながら覚えるAPI Gateway環境構築 ｜ Developers.IO](https://dev.classmethod.jp/cloud/aws/getting-start-api-gateway/)
+  - [RESTFulなAPIとCSRFとその対策 - API Gateway CSRF](http://watanabe-tsuyoshi.hatenablog.com/entry/2015/03/04/123649)
+  - 
+'''
+tags: [
+  "aws"
+]
+isStarred: false
+isTrashed: false

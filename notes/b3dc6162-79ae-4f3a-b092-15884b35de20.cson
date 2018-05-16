@@ -1,0 +1,39 @@
+createdAt: "2018-05-15T15:28:24.620Z"
+updatedAt: "2018-05-15T15:34:15.155Z"
+type: "MARKDOWN_NOTE"
+folder: "a6e537ab7f03cc49af0c"
+title: "参考になりそうなとこ"
+content: '''
+  # 参考になりそうなとこ
+  
+  ## 型クラス
+  
+  - [付録：様々な型クラスの紹介 · Scala研修テキスト](https://dwango.github.io/scala_text/typeclass.html)
+  - [Scalaz勉強会 主要な型クラスの紹介 · GitHub](https://gist.github.com/gakuzzzz/8d497609012863b3ea50)
+  - [続・結局型クラスって何がうれしいのっていう話 - 猫型の蓄音機は 1 分間に 45 回にゃあと鳴く](https://nekogata.hatenablog.com/entry/2014/07/05/011544)
+  - [型クラスに関するここ数日の議論 (2ページ目) - Togetter](https://togetter.com/li/1113557?page=2)
+  - [型クラスをOrderingを用いて説明してみる - kmizuの日記](http://kmizu.hatenablog.com/entry/2017/05/22/224622)
+  - [tomo🐧さんのツイート: "かめくっぱさんのイメージで合ってます。 同じ性質を持ったオブジェクトを集めたものがOOPでの「クラス」ですが、同様に同じ性質を持った型を集めたものが「型クラス」です。 「「値を集めた型」を集めたクラス」って感じの2階建構造です。… "](https://twitter.com/cocoatomo/status/866823764708700162)
+  - [誰か僕の右股関節と左足首と性根と転職先を何とかしてくださいさんのツイート: "一般的なクラスベースOOPにおけるインタフェースにはレシーバが存在するので型クラスはインタフェースじゃないというの、正しいとは思うけど、とは言え結局のところやりたいのは複数の型をグルーピングして共通の操作を提供したいなので、概ねインタフェースでいいのではみたいな気持ち。"](https://twitter.com/kamekoopa/status/866820569697722368)
+  
+  ## 言語仕様
+  
+  - [高階多相型で遊んでみる - Qiita](https://qiita.com/lotz/items/8b22ce15fb66cf293536)
+  - [\\[Scala\\]scalazのTaskは何が嬉しいのか - Qiita](https://qiita.com/petitviolet/items/18b1108ab904172baf61)
+  - [Scala 代数的データ型 超入門 - Qiita](https://qiita.com/shigemk2/items/31f6bdbf4dfebb0b9adc)
+  - [Scalaの=>記号の意味が多すぎるのでまとめた - Qiita](https://qiita.com/mizunowanko/items/e699f45ef918476ad81e)
+  - [Scalaの制御構文 · Scala研修テキスト](https://dwango.github.io/scala_text/control-syntax.html)
+  - [Readable Scala](http://gakuzzzz.github.io/slides/readable_scala/#39)
+  - [コンパイル時に型レベルで整数を四則演算してみた - Qiita](https://qiita.com/piyo7/items/1216ad44cae2b2aacece)
+  - [Scalaの型システムを学ぶ](http://kmizu.github.io/understanding_scala/type_system/index.html#/2)
+  - 
+  
+  ## Web Playなど
+  
+  - [PlayFramework 2.6.X のDIについて - Septeni Engineer's Blog](http://labs.septeni.co.jp/entry/2017/12/11/212502)
+  - [2017年11月現在のScalaのWeb Framework - xuwei-k's blog](https://xuwei-k.hatenablog.com/entry/2017/11/18/171423)
+  - 
+'''
+tags: []
+isStarred: false
+isTrashed: false

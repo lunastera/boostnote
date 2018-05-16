@@ -1,0 +1,15 @@
+createdAt: "2018-05-15T15:40:13.784Z"
+updatedAt: "2018-05-15T15:42:53.782Z"
+type: "MARKDOWN_NOTE"
+folder: "4d744513237da7165b37"
+title: "sqlite"
+content: '''
+  # sqlite
+  
+  [SQLite3でdatetimeなTEXTをなるべく高速に探す - ポクポク](https://pokutuna.hatenablog.com/entry/20111113/1321126659)
+'''
+tags: [
+  "sqlite"
+]
+isStarred: false
+isTrashed: false

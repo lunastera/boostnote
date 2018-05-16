@@ -1,5 +1,5 @@
 createdAt: "2018-05-13T01:49:07.395Z"
-updatedAt: "2018-05-15T00:39:37.673Z"
+updatedAt: "2018-05-15T15:54:42.687Z"
 type: "MARKDOWN_NOTE"
 folder: "9e4927fc8caa4e06d5d3"
 title: "よく使うのに忘れるやつ"
@@ -16,6 +16,11 @@ content: '''
   ```:ruby
   now = Time.now
   puts now.strftime('%Y/%m/%d %H:%M:%S')  #2014/09/06 16:29:32
+  ```
+  
+  ロードパスを加える
+  ```:ruby
+  $: << File.dirname(__FILE__)
   ```
 '''
 tags: [

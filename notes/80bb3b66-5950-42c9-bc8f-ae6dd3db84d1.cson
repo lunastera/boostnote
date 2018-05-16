@@ -1,0 +1,32 @@
+createdAt: "2018-05-15T15:48:18.491Z"
+updatedAt: "2018-05-15T15:53:58.365Z"
+type: "MARKDOWN_NOTE"
+folder: "13ece63b6941eca7d0a3"
+title: "HEAD^ HEAD~"
+content: '''
+  # HEAD^ HEAD~
+  
+  ## HEAD
+  
+  現在のブランチの先頭（最新）
+  
+  ## ~ チルダ
+  
+  ~世代前のコミットを指定出来る。
+  
+  HEAD\\~~とHEAD~2は一緒。
+  
+  ## ^ キャレット
+  
+  複数ある親コミットの中から指定できる。
+  
+  HEAD^^とHEAD^2は意味が違う。
+  
+  ![HEAD.jpg](/:storage/0.pw8jw6nu7dl.jpg)
+  
+  [【やっとわかった！】gitのHEAD^とHEAD~の違い - Qiita](https://qiita.com/chihiro/items/d551c14cb9764454e0b9)
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

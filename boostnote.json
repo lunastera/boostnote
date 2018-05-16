@@ -44,6 +44,26 @@
       "key": "13ece63b6941eca7d0a3",
       "color": "#FF8E00",
       "name": "git"
+    },
+    {
+      "key": "20bec3ae2f36a059130e",
+      "color": "#E10051",
+      "name": "関数型"
+    },
+    {
+      "key": "86934840a8c1c18b68ad",
+      "color": "#FF8E00",
+      "name": "kotlin"
+    },
+    {
+      "key": "e2766da9c6c1b0f60155",
+      "color": "#30D5C8",
+      "name": "web"
+    },
+    {
+      "key": "4d744513237da7165b37",
+      "color": "#E8D252",
+      "name": "db"
     }
   ],
   "version": "1.0"

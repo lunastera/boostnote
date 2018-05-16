@@ -1,0 +1,39 @@
+createdAt: "2018-05-15T14:16:50.960Z"
+updatedAt: "2018-05-15T14:28:36.854Z"
+type: "MARKDOWN_NOTE"
+folder: "a6e537ab7f03cc49af0c"
+title: "Scala入門"
+content: '''
+  # Scala入門
+  
+  ## インストール
+  
+  scalaのビルドツールであるsbtをインストールします。
+  OSXの人はbrewを使って導入するのが楽です。
+  
+  ```
+  brew install sbt
+  ```
+  
+  Windowsの場合はchocolateyを用いると楽です。
+  
+  ```
+  choco install sbt
+  ```
+  
+  ## プロジェクト
+  
+  適当に作業ディレクトリを作ります。
+  その中でbuild.sbtというファイルを作り、使いたいscalaのバージョンを記述してあげます。
+  
+  ```
+  mkdir scala-example && cd scala-example
+  touch build.sbt
+  echo 'scalaVersion := "2.12.6"' >> build.sbt
+  ```
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

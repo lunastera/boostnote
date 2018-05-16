@@ -1,5 +1,5 @@
 createdAt: "2018-05-14T14:17:52.553Z"
-updatedAt: "2018-05-14T14:24:14.295Z"
+updatedAt: "2018-05-15T14:17:02.473Z"
 type: "SNIPPET_NOTE"
 folder: "a6e537ab7f03cc49af0c"
 title: "標準入力"
@@ -30,3 +30,4 @@ tags: [
 ]
 isStarred: false
 isTrashed: false
+isPinned: true
