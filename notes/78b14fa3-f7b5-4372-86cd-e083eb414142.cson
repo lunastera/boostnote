@@ -1,0 +1,99 @@
+createdAt: "2018-05-19T07:37:24.279Z"
+updatedAt: "2018-05-19T08:02:47.595Z"
+type: "MARKDOWN_NOTE"
+folder: "e2766da9c6c1b0f60155"
+title: "Webフロント開発"
+content: '''
+  ## Webフロント開発
+  
+  ```
+  mkdir sample-app && cd sample-app
+  yarn init
+  yarn add webpack webpack-cli babel-core babel-loader babel-preset-env --dev
+  touch webpack.config.js .babelrc
+  mkdir src dist
+  ```
+  
+  ```:package.json
+  {
+    "name": "sample-app",
+    "version": "1.0.0",
+    "description": "sample",
+    "main": "dist/main.js",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/sobreera/sample-app.git"
+    },
+    "author": "Arashi Uno",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+      "build": "webpack",
+      "watch": "webpack -w"
+    },
+    "devDependencies": {
+      "webpack": "^4.8.3",
+      "webpack-cli": "^2.1.3",
+      "babel-core": "^6.26.3",
+      "babel-loader": "^7.1.4",
+      "babel-preset-env": "^1.7.0"
+    }
+  }
+  ```
+  
+  ```:webpack.config.js
+  module.exports = {
+    // context指定した場合、entryはcontextからの相対パスで良い: './index.js'
+    // context: __dirname + '/src',
+    entry: {
+      objective_canvas: './src/index.js'
+    },
+    output: {
+      filename: '[name].js',
+      path: __dirname + '/dist',
+      publicPath: '/'
+    },
+    module: {
+      rules: [
+        {
+          test: /\\.js$/,
+          // これでもいける
+          // use: 'babel-loader',
+          use: [
+            {
+              loader: 'babel-loader',
+              options: {
+                presets: [
+                  // TreeShakingの恩恵を受けるためにmodulesをfalseにしてやる必要がある。
+                  // これをしてないとbabel側でCommonJSに変換される。
+                  ['env', {'modules': false}]
+                ]
+              }
+            }
+          ],
+          // node_modulesは除外
+          // exclued: /node_modules/
+        }
+      ]
+    }
+  }
+  ```
+  
+  ```:.bablrc
+  {
+    "presets": ["env"]
+  }
+  ```
+  
+  runはなくていい
+  ```:zsh
+  yarn run build
+  ```
+'''
+tags: [
+  "webpack4"
+  "babel"
+  "front"
+]
+isStarred: false
+isTrashed: false

@@ -1,0 +1,34 @@
+createdAt: "2018-05-19T07:52:23.745Z"
+updatedAt: "2018-05-19T07:53:36.110Z"
+type: "MARKDOWN_NOTE"
+folder: "e2766da9c6c1b0f60155"
+title: "yarnチートシート"
+content: '''
+  # yarnチートシート
+  
+  npm                                 | yarn                          |  機能
+  ---                                 | ---                           | ---
+  `npm init`                          | `yarn init`                   | 管理を開始(インタラクティブ)
+  `npm init -y`                       | `yarn`                        | 管理を開始(即時)
+  `npm install`                       | `yarn install`                | 記録されたパッケージをインストール
+  `npm install --save [package@version]`      | `yarn add [package@version]`          | インストール + 記録
+  `npm install --save-dev [package]`  | `yarn add --dev [package]`    | 開発環境にのみインストール + 記録
+  `npm install --global [package]`    | `yarn global add [package]`   | グローバルにインストール        
+  `npm uninstall --save [package]`    | `yarn remove [package]`       | パッケージと記録を削除
+  `npm uninstall --save-dev [package]`| `yarn remove [package]`       | 開発環境のパッケージと記録を削除
+  `npm update --global`               | `yarn global upgrade`         | グローバルのパッケージ全体を更新
+  `rm -rf node_modules && npm install`| `yarn upgrade`                | ローカルのパッケージ全体の更新
+  `npm update [package]`              | `yarn upgrade [package]`      | ローカルのパッケージの更新
+  `npm cache clean`                   | `yarn cache clean`            | キャッシュクリア
+  `npm info [package]`                | `yarn info [package]`         | パッケージ情報の表示
+  `npm outdated`                      | `yarn outdated`               | 古いパッケージ一覧の表示
+  `npm run [script]`                  | `yarn run [script]`           | package.json内のscriptに定義されたスクリプトを実行
+  `npm search [package]`              | なし？<br/>`yarn info [package]`で一応調べられる | パッケージのバージョン一覧の取得
+  
+  [yarnチートシート - Qiita](https://qiita.com/morrr/items/558bf64cd619ebdacd3d)
+'''
+tags: [
+  "yarn"
+]
+isStarred: false
+isTrashed: false
