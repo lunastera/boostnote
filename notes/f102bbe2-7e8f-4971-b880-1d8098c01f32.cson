@@ -1,0 +1,38 @@
+createdAt: "2018-05-22T03:02:12.855Z"
+updatedAt: "2018-05-22T03:10:49.555Z"
+type: "MARKDOWN_NOTE"
+folder: "e2766da9c6c1b0f60155"
+title: "Webフロント開発 - 2018-05"
+content: '''
+  # Webフロント開発 - 2018-05
+  
+  - webpack
+  - babel
+  - flow
+  - eslint
+  - prettier
+  
+  ```
+  yarn add -D babel-core babel-loader babel-preset-env webpack webpack-cli webpack-dev-server flow-bin prettier eslint eslint-config-prettier eslint-plugin-prettier babel-preset-flow babel-eslint
+  ```
+  
+  ```
+  touch webpack.config.js .babelrc .eslintrc.yml .prettierignore
+  yarn flow init
+  ```
+  
+  
+  ```:package.json
+  "scripts": {
+    "lint": "eslint src",
+    "build:dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack-dev-server --hot"
+  },
+  ```
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

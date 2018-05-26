@@ -1,11 +1,6 @@
 {
   "folders": [
     {
-      "key": "21a0872a30d0ee261f99",
-      "color": "#1278BD",
-      "name": "Default"
-    },
-    {
       "key": "f45813ba065419aa5b3c",
       "color": "#E10051",
       "name": "雑記"
@@ -64,6 +59,21 @@
       "key": "4d744513237da7165b37",
       "color": "#E8D252",
       "name": "db"
+    },
+    {
+      "key": "22029e953c66da55cc6f",
+      "color": "#FF8E00",
+      "name": "言語仕様"
+    },
+    {
+      "key": "f0d2694aaa6dd5a2f569",
+      "color": "#3FD941",
+      "name": "docker"
+    },
+    {
+      "key": "a26edba27500e0553a3e",
+      "color": "#2BA5F7",
+      "name": "ios"
     }
   ],
   "version": "1.0"

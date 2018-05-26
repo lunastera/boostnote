@@ -1,12 +1,15 @@
 createdAt: "2018-05-15T15:00:42.843Z"
-updatedAt: "2018-05-15T15:45:40.009Z"
+updatedAt: "2018-05-25T21:41:53.841Z"
 type: "MARKDOWN_NOTE"
 folder: "e2766da9c6c1b0f60155"
-title: "ローカルHttps環境作る - 2018"
+title: "いろいろ"
 content: '''
-  ローカルHttps環境作る - 2018
+  # いろいろ
   
+  ローカルHttps環境作る - 2018
   ngrok
+  
+  [Fastly の無料プランでサイトを HTTP2 / TLS に対応させる - yuu26's memo](http://blog.yuu26.com/entry/20170515/1494775809)
 '''
 tags: [
   "https"

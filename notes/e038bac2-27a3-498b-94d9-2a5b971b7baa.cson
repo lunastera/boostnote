@@ -1,0 +1,38 @@
+createdAt: "2018-05-25T07:32:56.598Z"
+updatedAt: "2018-05-25T21:47:52.518Z"
+type: "MARKDOWN_NOTE"
+folder: "f0d2694aaa6dd5a2f569"
+title: "MacでのDockerいろいろ"
+content: '''
+  # MacでのDockerいろいろ
+  
+  イメージの実体
+  ` `
+  
+  コンテナの実体
+  ` `
+  
+  docker-composeを書き分けたい
+  環境変数 `COMPOSE_FILE` を設定すればいい
+  
+  Dockerfileで複数ポートは `EXPOSE 8080 8081`
+  
+  つながらない場合0.0.0.0を試す
+  yarn watch --host 0.0.0.0
+  
+  Dockerから成果物を取り出すにはdocker cp
+  docker-composeならvolumesを定義しとけばいい
+  
+  [Docker と node_modules と Volume Trick - Memento memo.](https://shotat.hateblo.jp/entry/2016/12/01/221631)
+  
+  [webpack でビルドしていたプロジェクトを docker に移す on @Qiita https://t.co/zSYT2zYYE3](https://twitter.com/mizchi/status/999187120903241729)
+  
+  docker-restart
+  - [webpack -w を仕込みたいがこいつよく crash するのでresume処理を仕込みたいというコンテキストです… ](https://twitter.com/mizchi/status/999175778775351296)
+  - [Docker Compose restart の挙動 - 技術備忘記](http://junchang1031.hatenablog.com/entry/2016/05/18/000605)
+  
+  [これじゃだめなんすかね - Twitter](https://twitter.com/mizchi/status/997414368164769793)
+'''
+tags: []
+isStarred: false
+isTrashed: false

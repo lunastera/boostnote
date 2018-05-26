@@ -1,0 +1,11 @@
+createdAt: "2018-05-25T21:37:55.623Z"
+updatedAt: "2018-05-25T21:38:42.647Z"
+type: "MARKDOWN_NOTE"
+folder: "1573d0fabccb47bc519b"
+title: "localStorage.flag = falseをflasyとして扱おうとすると失敗する"
+content: "localStorage.flag = falseをflasyとして扱おうとすると失敗する"
+tags: [
+  "front"
+]
+isStarred: false
+isTrashed: false

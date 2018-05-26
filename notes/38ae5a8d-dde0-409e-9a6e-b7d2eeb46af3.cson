@@ -1,0 +1,14 @@
+createdAt: "2018-05-25T21:49:45.061Z"
+updatedAt: "2018-05-26T10:24:07.212Z"
+type: "MARKDOWN_NOTE"
+folder: "8196dfea92bae5ea95b1"
+title: "情報まとめ"
+content: '''
+  # 情報まとめ
+  
+  次のOSXで32bitアプリが死ぬらしいので確認しようという話
+  - [GUIだとシステム情報>ソフトウェア>アプリケーションでもリストされますね(全ディスク)。また検索するならmdfindでkMDItemExecutableArchitecturesがi386かつx86_64でない、の方が高速です。今知ったけどアプリはともかく/usr/bin/や/usr/lib/にもあるんですね32bit。どうなるんだろ…](https://twitter.com/muota_here/status/996694205031366656)
+'''
+tags: []
+isStarred: false
+isTrashed: false

@@ -1,5 +1,5 @@
 createdAt: "2018-05-15T00:38:00.729Z"
-updatedAt: "2018-05-15T10:28:09.758Z"
+updatedAt: "2018-05-26T10:23:06.494Z"
 type: "MARKDOWN_NOTE"
 folder: "8196dfea92bae5ea95b1"
 title: "tmux: よく使うやつ"
@@ -83,8 +83,6 @@ content: '''
   
   ## hoge
   
-  ``
-  ```
 '''
 tags: [
   "tmux"
