@@ -1,0 +1,15 @@
+createdAt: "2018-05-26T10:51:37.284Z"
+updatedAt: "2018-05-26T10:52:53.173Z"
+type: "MARKDOWN_NOTE"
+folder: "8196dfea92bae5ea95b1"
+title: "fish"
+content: '''
+  # fish
+  
+  oh-my-fish 
+  `~/.local/share/omf` に `git clone` される
+  `~/.config/fish/conf.d/omf.fish`にファイルが置かれて起動時に読み込まれる。
+'''
+tags: []
+isStarred: false
+isTrashed: false
