@@ -1,5 +1,5 @@
 createdAt: "2018-05-25T07:32:56.598Z"
-updatedAt: "2018-05-25T21:47:52.518Z"
+updatedAt: "2018-06-02T14:41:15.950Z"
 type: "MARKDOWN_NOTE"
 folder: "f0d2694aaa6dd5a2f569"
 title: "MacでのDockerいろいろ"
@@ -12,16 +12,20 @@ content: '''
   コンテナの実体
   ` `
   
-  docker-composeを書き分けたい
+  docker-composeを書き分けたい場合は
   環境変数 `COMPOSE_FILE` を設定すればいい
   
   Dockerfileで複数ポートは `EXPOSE 8080 8081`
   
   つながらない場合0.0.0.0を試す
-  yarn watch --host 0.0.0.0
+  `yarn watch --host 0.0.0.0`
   
-  Dockerから成果物を取り出すにはdocker cp
-  docker-composeならvolumesを定義しとけばいい
+  Dockerから成果物を取り出すには`docker cp`
+  docker-composeなら`volumes`を定義しとけばいい
+  
+  DockerAPIは`docker inspect`参照しつつAPIリファレンス見ればだいたい分かる
+  
+  DokcerImageからRubyの最小環境を作る場合どうやっても10秒はかかる
   
   [Docker と node_modules と Volume Trick - Memento memo.](https://shotat.hateblo.jp/entry/2016/12/01/221631)
   

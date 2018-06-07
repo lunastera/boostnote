@@ -1,0 +1,25 @@
+createdAt: "2018-05-29T03:21:35.305Z"
+updatedAt: "2018-05-29T03:23:00.113Z"
+type: "MARKDOWN_NOTE"
+folder: "1573d0fabccb47bc519b"
+title: "bashのエスケープ"
+content: '''
+  # bashのエスケープ
+  
+  ## ダメなやつ
+  
+  ```:bash
+  echo 'hoge\\'fuga'
+  ```
+  
+  ## 正解
+  
+  ```:bash
+  echo `hoge`\\''fuga'
+  ```
+'''
+tags: [
+  "bash"
+]
+isStarred: false
+isTrashed: false

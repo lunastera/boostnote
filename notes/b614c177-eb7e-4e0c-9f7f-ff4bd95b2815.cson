@@ -1,0 +1,25 @@
+createdAt: "2018-06-04T01:41:44.363Z"
+updatedAt: "2018-06-04T01:44:03.891Z"
+type: "MARKDOWN_NOTE"
+folder: "1573d0fabccb47bc519b"
+title: "webpack-loader"
+content: '''
+  # webpack-loader
+  
+  ```:webpack
+  use: [
+    'style-loader',
+    {loader: 'css-loader', option: {url: false}},
+  ]
+  ```
+  
+  css-loaderから処理していく
+  css-loaderはCSSをJSにバンドルする機能
+  style-loaderはlinkタグにCSSを展開する機能
+'''
+tags: [
+  "webpack"
+  "css"
+]
+isStarred: false
+isTrashed: false

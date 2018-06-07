@@ -1,0 +1,83 @@
+createdAt: "2018-06-04T00:21:14.770Z"
+updatedAt: "2018-06-04T01:02:49.862Z"
+type: "MARKDOWN_NOTE"
+folder: "f45813ba065419aa5b3c"
+title: "6/5 ハンズオン"
+content: '''
+  # 6/5 ハンズオン
+  
+  Option 
+  `npm install --global yarn`
+  
+  ```:zsh
+  mkdir ts-proj-example
+  cd ts-proj-example
+  
+  yarn init
+  
+  yarn add -D babel-core babel-preset-env babel-loader
+  yarn add -D webpack webpack-cli
+  yarn add -D typescript awesome-typescript-loader
+  # Options
+  yarn add -D webpack-dev-server
+  yarn add -D html-webpack-plugin
+  
+  touch webpack.config.js .babelrc tsconfig.json
+  ```
+  
+  ```:webpack.config.js
+  {
+    ...
+    "scripts": {
+      "build:dev": "webpack --mode devepolment",
+      "build:pro": "webpack --mode production",
+      "watch": "webpack-dev-server --hot --inline --mode development"
+    }
+    ...
+  }
+  ```
+  
+  ```:.babelrc
+  {
+    "presets": ["env"]
+  }
+  ```
+  
+  ## HMRについて
+  
+  Webpackに備わっている、更新を検知した際、ページごと更新するのではなく、更新されたモジュールだけを変更する機能。
+  Reactなどを使っていればコンポーネントが変更された際にそのコンポーネントだけを更新することができる。
+  
+  自作モジュールかつTypeScriptの場合、同実装すればいいかというと
+  
+  ```:module.ts
+  let myFunction = () => { "Hey!Version.1" }
+  ```
+  
+  ```:index.ts
+  let myModule = require("./module.ts")
+  
+  if (module.hot) {
+    console.log("./module.ts", "module is hot.")
+    module.hot.accept(function() {
+      myModule = require("./module.ts")
+      updateContents()
+    })
+  }
+  
+  let updateContents = function() {
+    document.getElementById("content").innerText = myModule.myFunction()
+  }
+  
+  document.addEventListener("DOMContentLoaded", () => { updateContents() })
+  ```
+  
+  当然これだけでコンパイルするとmoduleなんか存在してないよ！と怒られるので、その依存を解決するパッケージを入れる
+  
+  ```:zsh
+  yarn add -D @types/webpack-env
+  ```
+'''
+tags: []
+isStarred: false
+isTrashed: false

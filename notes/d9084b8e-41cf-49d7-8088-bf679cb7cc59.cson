@@ -1,0 +1,284 @@
+createdAt: "2018-06-06T03:31:44.124Z"
+updatedAt: "2018-06-06T06:03:05.790Z"
+type: "MARKDOWN_NOTE"
+folder: "3e58fc5160629b901708"
+title: "2018-0605 TypeScriptフロントエンド環境構築"
+content: '''
+  # 2018-0605 TypeScriptフロントエンド環境構築
+  
+  ## Yarnをインストール
+  
+  ```:sh
+  npm install -g yarn
+  ```
+  
+  ## プロジェクトを作成
+  
+  ```:sh
+  mkdir プロジェクト名
+  cd プロジェクト名
+  yarn init
+  ```
+  
+  `yarn init`での注意点は、普通に開発する場合、`private`を`true`にしてもらったほうがいいということです。
+  
+  
+  ## パッケージをインストール
+  
+  開発のために必要、または在ると便利なツール / ライブラリ / フレームワークをインストールしていきます。
+  
+  babel一式はトランスパイラと呼ばれるもので、あるソースコードAを別のソースコードBに変換するような仕組みをもったコンパイラです。
+  これの何が嬉しいのかというと、例えばJavaScriptは様々な記法が存在していて、古いバージョンのJavaScriptを使っているようなブラウザだと新しい記法に対応していないためエラーが発生する、といったようなことになります。
+  それを防ぐために多くのブラウザが対応しているJavaScriptの形式に変換できるので、わざわざ人間が昔の書き方で書かなくても良いということなんですね。
+  例:
+  JavaScript(ES2016) -> JavaScript(ES2015)
+  
+  ```:sh
+  yarn add -D babel-core babel-loader babel-preset-env
+  ```
+  
+  webpack一式はモジュールバンドラと呼ばれるもので、ざっくり説明すると複数のファイルを一つのファイルとして書き出すことができます。
+  複数のCSSを一つのCSSに、複数のJavaScriptを一つのJavaScriptに、ということができます。
+  更に`production`モードとして書き出せば、Minify（ファイル圧縮）もしてくれます。
+  
+  これらの何が嬉しいのかというと、こういったアセットファイルは当然Webページにアクセスした際に、Webサーバから配信されます。
+  ファイルが複数あるということは、複数回通信を行っているということですので、それだけすべてを読み込むのに時間がかかってしまいます。
+  またファイルを圧縮せずに配信すると、それだけ通信する際の負担が大きくなってしまいます。
+  流石にないとは思いますが、ブログなどにアクセスしただけで100回の通信が行われ、100MB以上の通信を行う、なんてこと嫌ですよね。
+  
+  ですので上のbabelと合わせて、現時点でのWebフロントエンドでは何を行うにしてもほぼ必要となる技術になっています。
+  
+  ```:sh
+  yarn add -D webpack webpack-cli
+  ```
+  
+  次にTypeScriptを扱いたいのでTypeScriptのコンパイラとローダーを用意します。
+  ローダーというのはWebpackデフォルトで対応していないファイルの形式を扱えるようにするためのプラグインのようなものです。
+  しかしそれだけではJavaScriptに変換できないため、コンパイラもインストールしてJavaScriptにコンパイルしてもらう作業をしてもらうということですね。
+  ローダーは`ts-loader`と`awesome-typescript-loader`の2種類ありますが、後者のほうが早いので今回は後者を採用します。
+  
+  ```:sh
+  yarn add -D typescript awesome-typescript-loader
+  ```
+  
+  まだもう少し続きます。
+  次にWebpackでコンパイルした際に、コンパイル予定のファイルと予め編集しておいたHTMLファイルを読み込み、出力されたファイルを`<script>`タグなどで読み込むように編集されたHTMLファイルを書き出すプラグイン、`html-webpack-plugin`をインストールします。
+  
+  ```:sh
+  yarn add -D html-webpack-plugin
+  ```
+  
+  最後に開発用の仮Webサーバをインストールします。
+  これの優れているところは、
+  - ファイルを更新した際に自動で変更を検知してブラウザをリロードしてくれる
+  - 更新対象がHMRという機能に対応している場合、ページごとリロードするのではなくその更新された部分だけをリアルタイムに変更してくれる
+  - 一々ファイルを書き出してHDDに負荷をかけない
+  などが挙げられます。
+  
+  ```:sh
+  yarn add -D webpack-dev-server
+  ```
+  
+  これで一通りパッケージのインストールは完了です。お疲れ様でした。
+  
+  ## プロジェクトのフォルダ構成
+  
+  今回は`src`フォルダで作業をして、`public`フォルダに成果物を書き出すようにしましょう。
+  
+  ```:sh
+  mkdir src public
+  ```
+  
+  現在は
+  ```
+  .
+  ├── node_modules
+  │   └── ...
+  │   └── ...
+  ├── package.json
+  ├── public
+  ├── src
+  └── yarn.lock
+  ```
+  のような構成になっていると思います。
+  
+  ## 設定ファイルを作成
+  
+  ここが一番難しいところです。頑張って下さい。
+  
+  まず必要なファイルを一式作成します。
+  
+  ```:sh
+  touch .babelrc webpack.config.js tsconfig.json 
+  ```
+  
+  Windowsの方はコマンドプロンプトから
+  
+  ```:cmd
+  type nul > .babelrc
+  type nul > webpack.config.js
+  type nul > tsconfig.json
+  ```
+  として下さい。
+  AtomとかVSCodeつかってるならそっちでファイル作成してもいけると思います。
+  
+  `.babelrc`はbabelの設定ファイルです。最初に`.`をつけるのを忘れないで下さい。
+  `webpack.config.js`はwebpackの設定ファイルです。実態はJavaScriptファイルですが。
+  `tsconfig.json`はTypeScriptコンパイラ用の設定ファイルです。
+  
+  `.babelrc`から行きましょう。
+  
+  ```:.babelrc
+  {
+    "presets": ["env"]
+  }
+  ```
+  
+  「`presets`は`babel-preset-env`を使ってね」と記述しただけです。
+  `babel-preset-env`は環境に基いて必要なプラグインを自動で決定してくれるすごいやつです。
+  
+  次に`tsconfig.json`を編集しましょう。
+  
+  ```:tsconfig.json
+  {
+    "compilerOptions": {
+      "outDir": "./public/",
+      "sourceMap": true,
+      "noImplicitAny": true,
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "target": "es6",
+      "noLib": false,
+      "allowJs": false
+    },
+    "files": [
+      "./src/index.ts"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  }
+  ```
+  
+  `compilerOptions`はすべて説明すると長くなってしまうので、ここでは重要な`files`と`exclude`について説明を。
+  `files`はコンパイルするファイルパスを配列で指定します。これを忘れるとどうも一部環境で暴走してしまうようで・・・
+  `exclude`はコンパイル対象から`node_modules`を除外するという意味です。これも環境によって（ｒｙ
+  
+  最後に（今回）最も設定の難しい`webpack.config.js`です。
+  
+  ```:webpack.config.js
+  const HtmlWebpackPlugin = require("html-webpack-plugin")
+  
+  module.exports = {
+    entry: [__dirname + "/src/index.ts"],
+    output: {
+      filename: "bundle.js",
+      path: __dirname + "/public",
+      publicPath: "/"
+    },
+    devServer: {
+      contentBase: 'public/',
+      port: 3000
+    },
+    module: {
+      rules: [
+        {
+          test: /\\.js$/,
+          exclude: /node_modules/,
+          use: "babel-loader"
+        },
+        {
+          test: /\\.ts$/,
+          use: {
+            loader: "awesome-typescript-loader",
+            options: {
+              useBabel: true,
+              babelCore: "babel-core"
+            }
+          }
+        }
+      ]
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: "src/index.html"
+      })
+    ]
+  }
+  ```
+  
+  `const HtmlWebpackPlugin`は後でPluginの設定のときに使います。
+  
+  `entry`はプログラムのエントリーポイント（開始地点）を設定します。
+  今回は`src/`の中に`index.ts`というファイルを作り、それをコンパイルする予定なのでこう書きましょう。
+  パスの指定は二通り、`__dirname + "/ファイルパス"`と`path.resolve(__dirname, "ファイルパス")`を使う方法がありますが、今回は前者で行きましょう。このへんは好みだと思います。
+  
+  `output`は出力されるファイルの情報についてです。
+  `filename`と`path`についてはわかると思います。`publicPath`は主に他のプラグインと合わせて使われるのですが、この出力されたファイルがどこに配置されるのか、ということを指定するために存在しています。
+  `html-webpack-plugin`を使ったときなどがわかりやすいのですが、`/`なら出力されたHTMLファイルの`<script>`タグの`src`には`/bundle.js`といったように書き出されますし、`http://localhost:3000/`なら`http://localhost:3000/bundle.js`として書き出されます。
+  
+  `devServer`は`webpack-dev-server`用の設定で、コンテンツが配置される場所、ポート番号などが指定できます。
+  
+  `module`はプロジェクト内のファイル群（モジュールと呼ばれる）をどう扱うかを決めるところです。
+  今回はファイルをコンパイルする手順だけを示した`rules`だけ定義します。
+  「拡張子`js`のファイルは`babel-loader`を使ってコンパイルする、ただし`node_modules`のファイルは含まない。」
+  「拡張子`ts`のファイルは`awesome-script-loader`を使ってコンパイルする。`babel`を使用しCoreは`babel-core`である。」
+  今回はこの2つのルールを定義しました。
+  
+  `plugins`では使用するプラグインの設定を行います。
+  先程定義した`HtmlWebpackPlugin`を`new`して、テンプレートにするのはこのファイルだよということを伝えてあげます。
+  
+  これで一通りの設定は完了です。お疲れ様でした。
+  ようやくこれで開発に入ることができます。
+  
+  ## 開発サンプル
+  
+  まずは`src`の中に`index.ts`と`index.html`を作って下さい。
+  
+  ```:index.html
+  <!DOCTYPE html>
+  <html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello!!!</h1>
+    <h2 id="content"></h2>
+  </body>
+  </html>
+  ```
+  
+  ```:index.ts
+  let str: string = "First Version"
+  document.getElementById("content").innerHTML = str
+  ```
+  
+  ここまで書けたら開発用のサーバを起動してみましょう
+  
+  ```:sh
+  yarn run webpack-dev-server
+  ```
+  
+  先程設定ファイルで3000番ポートにサーバを建てるように設定したので、`http://localhost:3000/`にアクセスしてみましょう。
+  ちゃんとページが表示されていると思います。
+  
+  ここでサーバはそのままに、`index.ts`の`First Version`を`Second Version`に変えて保存してみましょう。
+  しばらくするとブラウザが勝手にリロードされて変更が反映されたと思います。
+  
+  サーバを止めるときはコーンソール画面に戻って`Ctrl C`を連打していれば抜けられます。
+  
+  では成果物を出力してみましょう。
+  `yarn run webpack --mode production`
+  
+  このコマンドを実行すると`public`にファイル一式が出力されていると思います。
+  `production`モードで出力したので`bundle.js`は全く読めなくなっていると思います。ですがちゃんと実行できるので安心して下さい。
+  `development`モードならもう少し読める状態で出てきます。（それでも人間に読めるものではないですが・・・）度のモジュールがエラーを起こしているかわかりやすくはなるので、開発する際は`development`モードで出力して下さい。
+  
+  270行近い説明に付き合っていただいてありがとうございました。
+  TypeScriptの`HotModuleRplacement`対応は気が向いたら書きます。
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false
